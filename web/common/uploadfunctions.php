@@ -65,7 +65,9 @@ function checkUpload() {
     $validateUploader = validateUploader();
 
     if (!hasvalidationerrors()) {
-	$mail = new \PHPMailer\PHPMailer\PHPMailer();
+	// $mail = new \PHPMailer\PHPMailer\PHPMailer();
+  $mail = new PHPMailer(); // narcode
+  require_once 'localmailconf.php'; // narcode
 	$templateRenderer = new Handlebars;
   list($email_exists, $email_verified) = contributorEmailCheck($email);
 
